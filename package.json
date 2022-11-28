@@ -1,0 +1,16 @@
+{
+   "name": "node-electron-serialport",
+   "version": "1.0.0",
+   "description": "",
+   "main": "main.js",
+   "scripts": {
+      "devStart": "npx electronmon ."
+   },
+   "author": "",
+   "license": "MIT",
+   "dependencies": {
+      "electron": "^21.3.1",
+      "express": "^4.18.2",
+      "serialport": "^10.5.0"
+   }
+}
