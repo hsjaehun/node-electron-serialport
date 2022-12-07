@@ -1,16 +1,50 @@
 {
    "name": "node-electron-serialport",
    "version": "1.0.0",
-   "description": "",
+   "description": "Electron Serialport",
    "main": "main.js",
    "scripts": {
-      "devStart": "npx electronmon ."
+      "start": "electron .",
+      "dist": "electron-builder --win",
+      "distwin64": "electron-builder --win nsis:x64"
    },
-   "author": "",
+   "author": "jeahun",
    "license": "MIT",
    "dependencies": {
-      "electron": "^21.3.1",
+      "electron-build": "^0.0.3",
+      "electron-squirrel-startup": "^1.0.0",
       "express": "^4.18.2",
       "serialport": "^10.5.0"
+   },
+   "devDependencies": {
+      "electron": "^21.3.3",
+      "electron-builder": "^23.6.0"
+   },
+   "build": {
+      "appId": "kr.ingstory.serialport.electron",
+      "productName": "electron serialport",
+      "asar": true,
+      "mac": {
+         "target": [
+            "pkg"
+         ],
+         "entitlements": "entitlements.mac.plist"
+      },
+      "win": {
+         "target": [
+            {
+               "target": "zip",
+               "arch": [
+                  "x64"
+               ]
+            },
+            {
+               "target": "msi",
+               "arch": [
+                  "x64"
+               ]
+            }
+         ]
+      }
    }
 }
